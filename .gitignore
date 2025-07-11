@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+
+# Lockfiles and environment markers
+uv.lock
+.python-version
+
+# Ignore Google Cloud service account key
+service_account_key.json
