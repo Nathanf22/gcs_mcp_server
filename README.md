@@ -61,7 +61,7 @@ The integration test suite validates all server functionality against a live GCS
 1.  **Start the server** in one terminal: `uv run gcs-mcp-server`
 2.  **Run the tests** in a second terminal:
     ```bash
-    uv run pytest -m integration
+    uv run pytest --run-integration -m integration --verbose tests/integration_test.py
     ```
 
 ## Deployment
