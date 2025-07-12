@@ -1,16 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "gcs-mcp-server"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.2.0"
+description = "A Multi-Capability Server for interacting with Google Cloud Storage."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
+license = { text = "MIT" }
 dependencies = [
     "google-cloud-storage>=3.2.0",
     "fastmcp==2.10.4",
+    "httpx>=0.27.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [project.optional-dependencies]
 test = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
+    "respx>=0.20.0",
+]
+
+[project.scripts]
+gcs-mcp-server = "gcs_mcp_server.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')",
 ]

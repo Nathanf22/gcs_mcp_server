@@ -49,7 +49,7 @@ The server is built using Python with the [FastMCP](https://gofastmcp.com/) fram
 To start the server, run the following command:
 
 ```bash
-uv run main.py
+uv run gcs-mcp-server
 ```
 
 The server will be available at `http://localhost:8080`.
@@ -58,10 +58,10 @@ The server will be available at `http://localhost:8080`.
 
 The integration test suite validates all server functionality against a live GCS environment.
 
-1.  **Start the server** in one terminal: `uv run main.py`
+1.  **Start the server** in one terminal: `uv run gcs-mcp-server`
 2.  **Run the tests** in a second terminal:
     ```bash
-    uv run tests/integration_test.py
+    uv run pytest -m integration
     ```
 
 ## Deployment
